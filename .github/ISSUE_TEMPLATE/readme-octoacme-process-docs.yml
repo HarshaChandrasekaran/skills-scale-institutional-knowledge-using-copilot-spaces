@@ -1,0 +1,101 @@
+name: "Add Content to Project Management Process Docs"
+description: "Request to add new content or updates to an existing program management process document."
+title: "[Process Doc Update]: Create README for OctoAcme Project Management Docs with project management processes summary and links to all documentation"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update?"
+      options:
+        - "<new document>"
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      value: |
+        Create a comprehensive README document for the OctoAcme Project Management Docs that serves as a central hub and entry point for all project management process documentation. The README includes:
+
+        - Clear overview of OctoAcme's five-phase project management lifecycle
+        - Organized, hyperlinked references to all process documents
+        - Summary of OctoAcme's five core project management principles
+        - Quick navigation guidance for different user roles and phases
+        - Communication cadence and key artifacts at a glance
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      value: |
+        Currently, project management process documentation exists as individual markdown files scattered across the `docs/` directory, but there is no single central entry point or README that ties them together into a coherent narrative. This creates friction for:
+
+        - **New team members** onboarding to OctoAcme who need to understand the complete PM approach
+        - **Cross-functional stakeholders** who need to quickly reference relevant processes
+        - **Project leads** who want a single source of truth for the complete project lifecycle framework
+        - **Knowledge retention** when team members leave or transition
+
+        A comprehensive, well-organized README:
+        - Reduces onboarding time with a clear roadmap
+        - Improves discoverability and searchability of process documentation
+        - Establishes a unified narrative reflecting the complete project lifecycle
+        - Enables better governance and easier updates going forward
+        - Supports the Copilot Spaces initiative to centralize institutional knowledge
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content"
+      value: |
+        **File:** `docs/README.md`
+
+        The README has been created with the following structure:
+
+        # OctoAcme Project Management Documentation
+
+        ## Overview
+        Five core principles: Customer-first, Iterative delivery, Clear ownership, Data-informed decisions, Psychological safety
+
+        ## Quick Links to Process Documentation
+        - Getting Started: Project Management Overview
+        - Project Lifecycle: Initiation → Planning → Execution & Tracking → Risks & Communication → Release & Deployment → Retrospective & Continuous Improvement
+        - Reference: Roles & Personas
+
+        ## Project Lifecycle at a Glance
+        Five-phase summary with descriptions
+
+        ## Key Artifacts
+        - Project Charter / One-pager
+        - Roadmap and Release Plan
+        - Sprint/Iteration Backlog
+        - Risk Register
+        - Retrospective notes
+
+        ## Communication Cadence
+        - Weekly: PM + PdM sync
+        - Twice-weekly: Team standups
+        - Monthly: Stakeholder updates
+        - As needed: Escalations
+
+        ## Getting Help
+        Context-specific navigation by role and project phase
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      options:
+        - label: "Content aligns with existing process docs"
+          checked: true
+        - label: "Update improves clarity or closes a documented gap"
+          checked: true
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
+          checked: true
